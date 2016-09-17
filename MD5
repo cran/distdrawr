@@ -1,0 +1,12 @@
+7b897f8968a6900a1494f837a19175a5 *DESCRIPTION
+b5b2e20c75457107297b566908b8c29d *NAMESPACE
+766adba111373bc7127bec7f3af4936d *NEWS.md
+5a3489cb0494284d57c7d9109b396738 *R/check_species.R
+5a52dd7354a18b9022973a8631a3ec8a *R/distdrawr-package.R
+22d2b610e4122d3b1e74606d2d361920 *R/distdrawr.R
+b99aba4a74c069715c7f2239fad5af95 *R/get.dist.R
+33c3fcb7027fb224f4aab51e4faa3514 *R/sysdata.rda
+14ebce98ea8a18e1b398ef5ab4ce6227 *README.md
+834248e125335857a6c5430c0fd8d056 *man/check_species.Rd
+77fb0a25a195ab0e41cc8086d6c3308b *man/distdrawr-package.Rd
+05c3b84863d119cb419afa0322a8060b *man/get.dist.Rd
