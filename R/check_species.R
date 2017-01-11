@@ -22,7 +22,7 @@
 #' @references Datenbank FLORKART der Floristischen Kartierung Deutschlands,
 #' Stand 2013, Bundesamt fuer Naturschutz (BfN) und Netzwerk Phytodiversitaet
 #' Deutschland (NetPhyD): \url{http://www.floraweb.de}
-
+#' @export
 
 check_species <- function(x,level="species"){
     spec <- speciesidref
@@ -80,7 +80,7 @@ check_species <- function(x,level="species"){
         if(i==1){ matches <- matches[-1,]}
         if (length(grep(split[1,i],spec[,2])) == 0){
           attr(matches,"mismatches") <- c(attr(matches,"mismatches"),
-                                          paste(split[1,i],split[2,i],sep="_"))
+                                          paste(split[1,i]))
         }
       }
     }

@@ -30,7 +30,7 @@
 #' @references Datenbank FLORKART der Floristischen Kartierung Deutschlands,
 #' Stand 2013, Bundesamt fuer Naturschutz (BfN) und Netzwerk Phytodiversitaet
 #' Deutschland (NetPhyD): \url{http://www.floraweb.de}
-
+#' @export
 
 get.dist <- function(x, input = FALSE, output = "list", matrix.res = "TK25"){
 
@@ -111,16 +111,18 @@ if (input==F){
 
 ##matrix TK25-Plots
   if (output == "matrix" & matrix.res == "TK25"){
-    rowsmatrix <- data.frame(unique(round(rowsmatrix$TK,-1)))
-    names(rowsmatrix) <- "TK"
-    distmatrix <- matrix(NA,nrow=length(rowsmatrix$TK),ncol=length(matches$NAMNR),
-                         dimnames=list(rowsmatrix$TK,matches$species))
+    rowsmatrixTK25 <- data.frame(unique(round(rowsmatrix$TK,-1)))
+    names(rowsmatrixTK25) <- "TK"
+    distmatrix <- matrix(NA,nrow=length(rowsmatrixTK25$TK),ncol=length(matches$NAMNR),
+                         dimnames=list(rowsmatrixTK25$TK,matches$species))
     for (i in 1:nrow(matches)){
       url <- url(paste0("http://floraweb.de/pflanzenarten/download_tkq.xsql?suchnr=",
                         matches$NAMNR[i]))
       a <- suppressWarnings(utils::read.table(url, skip=43,sep=",")[,c(3,4)])
       names(a) <-c("TAXONNAME", "TK")
-      a <- a[-which((a$TK-round(a$TK,-1))==0),]
+      #if(length(which((a$TK-round(a$TK,-1))==0)) != 0){
+     #   a <- a[-which((a$TK-round(a$TK,-1))==0),]
+      #}
       distmatrix[,i] <- ifelse(row.names(distmatrix)%in%as.character(round(a$TK,-1)),1,0)
       closeAllConnections()
       message(paste0("  Downloaded  ", paste(i), "/",nrow(matches)))
@@ -137,7 +139,6 @@ if (input==F){
       url <- url(paste0("http://floraweb.de/pflanzenarten/download_tkq.xsql?suchnr=",matches$NAMNR[i]))
       a <- suppressWarnings(utils::read.table(url, skip=43,sep=",")[,c(3,4)])
       names(a) <-c("TAXONNAME", "TK")
-      a <- a[-which((a$TK-round(a$TK,-1))==0),]
       distmatrix[,i] <- ifelse(row.names(distmatrix)%in%as.character(a$TK),1,0)
       closeAllConnections()
       message(paste0("  Downloaded  ", paste(i), "/",nrow(matches)))
