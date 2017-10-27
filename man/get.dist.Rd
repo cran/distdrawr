@@ -48,4 +48,3 @@ Datenbank FLORKART der Floristischen Kartierung Deutschlands,
 Stand 2013, Bundesamt fuer Naturschutz (BfN) und Netzwerk Phytodiversitaet
 Deutschland (NetPhyD): \url{http://www.floraweb.de}
 }
-

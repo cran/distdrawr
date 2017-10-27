@@ -8,9 +8,6 @@
 Tools for downloading data from the FLORKART-database on the
 distribution of vascular plants in Germany in a convenient way.
 }
-\author{
-Nicolas Friess
-}
 \references{
 Datenbank FLORKART der Floristischen Kartierung Deutschlands,
 Stand 2013, Bundesamt fuer Naturschutz (BfN) und Netzwerk Phytodiversitaet
@@ -19,4 +16,6 @@ Deutschland (NetPhyD): \url{http://www.floraweb.de}
 \seealso{
 \code{\link{get.dist} \link{check_species}}
 }
-
+\author{
+Nicolas Friess
+}

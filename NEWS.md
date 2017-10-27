@@ -1,4 +1,7 @@
-# distdrwar 0.1.2
+# distdrawr 0.1.3
+* updated the reference database 
+
+# distdrawr 0.1.2
 * bugfix in check_species() that throws an error in mismatches when level = "genus".
 * bugfix in get.dist(), that returns 0 in cases where entries in FloraWeb only comprised quarterTK-declarations.
 
